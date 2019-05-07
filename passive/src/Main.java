@@ -50,12 +50,18 @@ public class Main {
         return result;
     }
 
-
+    static int getTotalTk(Ue[] ue,int ueNum){
+        int totalTk=0;
+        for(int i=0;i<ueNum;i++){
+            totalTk+=ue[i].token;
+        }
+        return totalTk;
+    }
 
     public static void main(String[] args) {
 
-        for(int tokenNum=1;tokenNum<=30;tokenNum++){
-            for(int badNum = 100;badNum<=2000;badNum+=100){
+        for(int tokenNum=20;tokenNum<=30;tokenNum++){
+            for(int badNum = 100;badNum<=100;badNum+=100){
                 String fileName =  "result.csv";
                 try(FileWriter fileWriter = new FileWriter(fileName,true)){
                     String fileContent = "Token:"+tokenNum+","+"Bad UE:"+badNum+"\n";
@@ -122,6 +128,8 @@ public class Main {
                         ue[i].decline();
                         ue[i].giveTk(tokenNum);
                     }
+                    //System.out.println(getTotalTk(ue,ueNum));
+
                     rnd--;
                 }
 

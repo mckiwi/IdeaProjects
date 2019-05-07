@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8c19fd6-8399-45d4-9ae5-6085526745f2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../active/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../active/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../active/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../active/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../passive/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../passive/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../passive/result.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/result.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../passive/result.csv" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,12 +23,11 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
+                <state relative-caret-position="735">
                   <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#relay#0;class#Main#0" />
-                    <element signature="method#sendPacket#0;class#Main#0" />
                   </folding>
                 </state>
               </provider>
@@ -55,8 +52,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/myDraw.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="223">
-                  <caret line="28" column="62" selection-end-line="49" />
+                <state relative-caret-position="240">
+                  <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -128,7 +125,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../passive" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../active" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -177,12 +174,12 @@
       <workItem from="1556543377080" duration="4164000" />
       <workItem from="1556639966075" duration="10000" />
       <workItem from="1556641104424" duration="1234000" />
-      <workItem from="1556719381483" duration="3483000" />
+      <workItem from="1556719381483" duration="5443000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66071000" />
+    <option name="totallyTimeSpent" value="68031000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -195,6 +192,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20066334" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -205,7 +203,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30682978" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30682978" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39959225" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -252,24 +250,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myDraw.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="28" column="62" selection-end-line="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="735">
           <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#relay#0;class#Main#0" />
-            <element signature="method#sendPacket#0;class#Main#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myDraw.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

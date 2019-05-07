@@ -50,12 +50,33 @@ public class Main {
         return result;
     }
 
+    static int getTotalTk(Ue[] ue,int ueNum){
+        int totalTk=0;
+        for(int i=0;i<ueNum;i++){
+            totalTk+=ue[i].token;
+        }
+        return totalTk;
+    }
+    static int classify(Ue[] ue,int ueNum,Ue ueTarget){
+        double thresholdHigh=0.001;//0.001
+        int thresholdLow=1;
+        if( (double)ueTarget.token/getTotalTk(ue,ueNum) >= thresholdHigh){
+            return 1; //is bad UE
+        }
+        if(ueTarget.token<=thresholdLow) {
+            if(ueTarget.cqi<=5)
+                return -1; //poor UE
+            else
+                return 0;
+        }
+        return 0; //is normal UE
+    }
 
 
     public static void main(String[] args) {
 
-        for(int tokenNum=1;tokenNum<=1;tokenNum++){
-            for(int badNum = 100;badNum<=100;badNum+=100){
+        for(int tokenNum=1;tokenNum<=30;tokenNum++){
+            for(int badNum = 100;badNum<=2000;badNum+=100){
                 String fileName =  "result.csv";
                 try(FileWriter fileWriter = new FileWriter(fileName,true)){
                     String fileContent = "Token:"+tokenNum+","+"Bad UE:"+badNum+"\n";
@@ -117,7 +138,20 @@ public class Main {
                         Thread.currentThread().interrupt();
                     }
                     drawing.draw();*/
-
+                    int badue=0,poorue=0;
+                    for(int i=0;i<ueNum;i++){
+                        if(classify(ue,ueNum,ue[i])==1){
+                            ue[i].decline();
+                            badue++;
+                        }
+                        else if(classify(ue,ueNum,ue[i])==-1){
+                            poorue++;
+                        }
+                    }
+                    for(int i=0;i<poorue;i++){
+                        ue[i].giveTk(getTotalTk(ue,ueNum),badue,poorue);
+                    }
+                    System.out.println(badue+" "+poorue+" "+getTotalTk(ue,ueNum));
                     rnd--;
                 }
 

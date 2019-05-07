@@ -9,6 +9,7 @@ public class Ue {
     Random ran;
     int x,y,range;
     int[][] dir = new int[4][2];
+    double declineRate = 0.7;//0.8
     boolean badUe = false;
     List<Integer> neighbor = new ArrayList<Integer>();
 
@@ -74,6 +75,22 @@ public class Ue {
                     neighbor.add(co);
         }
         //this.neighbor = list;
+    }
+
+    void decline(){
+        if(token>0){
+            token*=declineRate;
+        }
+        return;
+    }
+
+    void giveTk(int totalTk, int badUe, int poorue){
+        double tmp = (double)totalTk;
+        tmp = tmp*badUe*(1-declineRate)/poorue;
+        if(token<2)     //threshold:2
+            //token+=2;
+            token+=tmp;
+        return;
     }
 }
 

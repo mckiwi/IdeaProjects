@@ -83,11 +83,12 @@ public class Ue {
         }
         return;
     }
-    void giveTk(int addNum){
-        double tmp = (double)addNum;
+    void giveTk(int tokenNum){
+        double tmp = (double)tokenNum;
         tmp= tmp*(1-declineRate);
         if(token<2)     //threshold:2
-            token+=tmp;//token+=2;
+            //token+=2;
+            token+=tmp;
         return;
     }
 }
