@@ -3,6 +3,7 @@ import com.sun.xml.internal.bind.v2.TODO;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
@@ -138,20 +139,32 @@ public class Main {
                         Thread.currentThread().interrupt();
                     }
                     drawing.draw();*/
-                    int badue=0,poorue=0;
+                    int badue=0,poorue=0,tokenDec=0;
+                    ArrayList<Integer> poor = new ArrayList<>();
+                    int tmpTotal=getTotalTk(ue,ueNum);
                     for(int i=0;i<ueNum;i++){
                         if(classify(ue,ueNum,ue[i])==1){
+                            int tmp=ue[i].token;
                             ue[i].decline();
+                            tokenDec+=tmp-ue[i].token+1;
                             badue++;
                         }
                         else if(classify(ue,ueNum,ue[i])==-1){
                             poorue++;
+                            poor.add(i);
                         }
                     }
+                    int tokenToGive = tmpTotal-getTotalTk(ue,ueNum);
                     for(int i=0;i<poorue;i++){
-                        ue[i].giveTk(getTotalTk(ue,ueNum),badue,poorue);
+                        if(tokenToGive<=0)
+                            break;
+                        ue[poor.get(i)].giveTk(tmpTotal-getTotalTk(ue,ueNum),poorue);
+                        if((tmpTotal-getTotalTk(ue,ueNum))/poorue < 1)
+                            tokenToGive--;
+                        else
+                            tokenToGive=tokenToGive-((tmpTotal-getTotalTk(ue,ueNum))/poorue);
                     }
-                    System.out.println(badue+" "+poorue+" "+getTotalTk(ue,ueNum));
+                    //System.out.println(badue+" "+poorue+" "+getTotalTk(ue,ueNum));
                     rnd--;
                 }
 

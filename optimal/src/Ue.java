@@ -8,7 +8,7 @@ public class Ue {
     int cqi; // range/2 -> 0-10
     Random ran;
     int x,y,range;
-    double declineRate =0.8;
+    double declineRate =0.7;
     int[][] dir = new int[4][2];
     boolean badUe = false;
     List<Integer> neighbor = new ArrayList<Integer>();
@@ -83,12 +83,31 @@ public class Ue {
         }
         return;
     }
+
+    void decline(double decRate){
+        if(token>0){
+            token*=decRate;
+        }
+        return;
+    }
+
     void giveTk(int tokenNum){
         double tmp = (double)tokenNum;
         tmp= tmp*(1-declineRate);
         if(token<2)     //threshold:2
             //token+=2;
             token+=tmp;
+        return;
+    }
+
+    void giveTk(int tokenDec, int poorue){
+        double tmp = (double)tokenDec;
+        tmp = tokenDec/poorue;
+        //if(token<2)     //threshold:2
+        //token+=2;
+        token = token+(int)tmp;
+        if(tmp<1)
+            token++;
         return;
     }
 }

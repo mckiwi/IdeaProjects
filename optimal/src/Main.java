@@ -3,6 +3,7 @@ import com.sun.xml.internal.bind.v2.TODO;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
@@ -58,10 +59,25 @@ public class Main {
         return totalTk;
     }
 
+    static int classify(Ue[] ue,int ueNum,Ue ueTarget){
+        double thresholdHigh=0.001;//0.001
+        int thresholdLow=1;
+        if( (double)ueTarget.token/getTotalTk(ue,ueNum) >= thresholdHigh){
+            return 1; //is bad UE
+        }
+        if(ueTarget.token<=thresholdLow) {
+            if(ueTarget.cqi<=5)
+                return -1; //poor UE
+            else
+                return 0;
+        }
+        return 0; //is normal UE
+    }
+
     public static void main(String[] args) {
 
-        for(int tokenNum=20;tokenNum<=20;tokenNum++){
-            for(int badNum = 100;badNum<=100;badNum+=100){
+        for(int tokenNum=1;tokenNum<=30;tokenNum++){
+            for(int badNum = 100;badNum<=2000;badNum+=100){
                 String fileName =  "result.csv";
                 try(FileWriter fileWriter = new FileWriter(fileName,true)){
                     String fileContent = "Token:"+tokenNum+","+"Bad UE:"+badNum+"\n";
@@ -123,11 +139,40 @@ public class Main {
                         Thread.currentThread().interrupt();
                     }
                     drawing.draw();*/
-
-                    for(int i=0;i<ueNum;i++){
-                        ue[i].decline();
-                        ue[i].giveTk(tokenNum);
+                    if(tokenNum<=5){
+                        int badue=0,poorue=0,tokenDec=0;
+                        ArrayList<Integer> poor = new ArrayList<>();
+                        int tmpTotal=getTotalTk(ue,ueNum);
+                        for(int i=0;i<ueNum;i++){
+                            if(classify(ue,ueNum,ue[i])==1){
+                                int tmp=ue[i].token;
+                                ue[i].decline();
+                                tokenDec+=tmp-ue[i].token+1;
+                                badue++;
+                            }
+                            else if(classify(ue,ueNum,ue[i])==-1){
+                                poorue++;
+                                poor.add(i);
+                            }
+                        }
+                        int tokenToGive = tmpTotal-getTotalTk(ue,ueNum);
+                        for(int i=0;i<poorue;i++){
+                            if(tokenToGive<=0)
+                                break;
+                            ue[poor.get(i)].giveTk(tmpTotal-getTotalTk(ue,ueNum),poorue);
+                            if((tmpTotal-getTotalTk(ue,ueNum))/poorue < 1)
+                                tokenToGive--;
+                            else
+                                tokenToGive=tokenToGive-((tmpTotal-getTotalTk(ue,ueNum))/poorue);
+                        }
                     }
+                    else{
+                        for(int i=0;i<ueNum;i++){
+                            ue[i].decline();
+                            ue[i].giveTk(tokenNum);
+                        }
+                    }
+
                     //System.out.println(getTotalTk(ue,ueNum));
 
                     rnd--;
