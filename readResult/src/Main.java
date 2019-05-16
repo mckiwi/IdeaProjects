@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String fileName = "result-a-0.001.csv";
+        String fileName = "result-opt.csv";
         String fileOut = "output.csv";
         int lineNum=1;
         try(FileReader fileReader = new FileReader(fileName)){
