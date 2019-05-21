@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8bd105c3-d9f6-4d73-b3f4-c98afa34e90a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../active/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../active/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../active/out/production/active/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../active/out/production/active/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../active/result.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../optimal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../optimal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../optimal/result.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loss.csv" beforeDir="false" afterPath="$PROJECT_DIR$/loss.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/output.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -18,15 +16,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
+            <state relative-caret-position="45">
               <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
             </state>
           </provider>
@@ -44,11 +41,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="5">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1855" />
-    <option name="height" value="1084" />
+    <option name="y" value="24" />
+    <option name="width" value="928" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -109,18 +106,18 @@
       <workItem from="1556184863932" duration="5358000" />
       <workItem from="1557244702124" duration="157000" />
       <workItem from="1557245194035" duration="1680000" />
-      <workItem from="1558017761961" duration="729000" />
+      <workItem from="1558017761961" duration="4661000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7924000" />
+    <option name="totallyTimeSpent" value="11856000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="7" />
+    <frame x="65" y="24" width="928" height="1056" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1448314" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29705215" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -129,7 +126,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4997236" visible="true" weight="0.32925585" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4997236" visible="true" weight="0.33892968" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -157,7 +154,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="45">
           <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
         </state>
       </provider>

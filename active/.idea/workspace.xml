@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ba05630-3644-4d2d-aa2a-a54f078ef8f1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/result.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../optimal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../optimal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../optimal/result.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../readResult/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readResult/loss.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/loss.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../readResult/output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/output.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../readResult/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/src/Main.java" afterDir="false" />
     </list>
@@ -78,9 +77,9 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1855" />
-    <option name="height" value="1084" />
+    <option name="y" value="24" />
+    <option name="width" value="928" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -164,7 +163,7 @@
     <option name="totallyTimeSpent" value="18696000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1092" extended-state="7" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1641791" />

@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="14813e5a-6e2f-4fd5-8314-42eb9bdfee9f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../active/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../active/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../active/out/production/active/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../active/out/production/active/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../active/result.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../readResult/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readResult/loss.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/loss.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../readResult/output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/output.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../readResult/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/src/Main.java" afterDir="false" />
     </list>
@@ -45,7 +43,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Ue.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="582">
+                <state relative-caret-position="474">
                   <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
                 </state>
               </provider>
@@ -191,7 +189,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Ue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
+        <state relative-caret-position="474">
           <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
         </state>
       </provider>
