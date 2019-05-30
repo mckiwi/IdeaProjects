@@ -4,9 +4,6 @@
     <list default="true" id="14813e5a-6e2f-4fd5-8314-42eb9bdfee9f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../active/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../active/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../readResult/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../readResult/loss.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/loss.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../readResult/output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/output.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../readResult/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/src/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,7 +40,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Ue.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="474">
+                <state relative-caret-position="795">
                   <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
                 </state>
               </provider>
@@ -64,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1985" />
     <option name="y" value="-4" />
     <option name="width" value="1855" />
@@ -149,8 +146,7 @@
     <option name="totallyTimeSpent" value="5600000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1985" y="-4" width="1855" height="1084" extended-state="7" />
-    <editor active="true" />
+    <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -167,7 +163,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32721713" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32721713" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -189,7 +185,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Ue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
+        <state relative-caret-position="795">
           <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
         </state>
       </provider>

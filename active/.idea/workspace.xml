@@ -4,9 +4,6 @@
     <list default="true" id="4ba05630-3644-4d2d-aa2a-a54f078ef8f1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../optimal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../optimal/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../readResult/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../readResult/loss.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/loss.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../readResult/output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/output.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../readResult/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../readResult/src/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +22,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="66">
+                <state relative-caret-position="120">
                   <caret line="141" column="20" lean-forward="true" selection-start-line="141" selection-start-column="20" selection-end-line="165" selection-end-column="21" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -43,7 +40,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Ue.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="426">
+                <state relative-caret-position="750">
                   <caret line="95" column="5" lean-forward="true" selection-start-line="86" selection-start-column="4" selection-end-line="95" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -75,11 +72,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="928" />
-    <option name="height" value="1056" />
+    <option name="y" value="-4" />
+    <option name="width" value="1855" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -163,7 +160,7 @@
     <option name="totallyTimeSpent" value="18696000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="7" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1641791" />
@@ -175,7 +172,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37410805" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37410805" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -213,7 +210,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
+        <state relative-caret-position="750">
           <caret line="95" column="5" lean-forward="true" selection-start-line="86" selection-start-column="4" selection-end-line="95" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -223,7 +220,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
+        <state relative-caret-position="120">
           <caret line="141" column="20" lean-forward="true" selection-start-line="141" selection-start-column="20" selection-end-line="165" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
