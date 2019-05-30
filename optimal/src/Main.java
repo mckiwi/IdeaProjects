@@ -77,12 +77,14 @@ public class Main {
     public static void main(String[] args) {
 
         for(int tokenNum=1;tokenNum<=30;tokenNum++){
-            for(int badNum = 100;badNum<=2000;badNum+=100){
-                String fileName =  "result.csv";
-                try(FileWriter fileWriter = new FileWriter(fileName,true)){
-                    String fileContent = "Token:"+tokenNum+","+"Bad UE:"+badNum+"\n";
+            for(int badNum = 100;badNum<=2000;badNum+=100) {
+                for(int highMobilityNum=10;highMobilityNum<=90;highMobilityNum+=20) {
+                String fileName = "result.csv";
+                try (FileWriter fileWriter = new FileWriter(fileName, true)) {
+                    String fileContent = "Token:" + tokenNum + "," + "Bad UE:" + badNum + "\n";
                     fileWriter.write(fileContent);
-                }catch (IOException e){}
+                } catch (IOException e) {
+                }
 
                 int ueNum = 3000, range = 2000;
 
@@ -91,8 +93,14 @@ public class Main {
                 Ue[] ue = new Ue[ueNum];
                 for (int i = 0; i < ueNum; i++) {   //initial
                     ue[i] = new Ue(tokenNum, range);
-                    if(i<300)
+                    if (i < badNum)
                         ue[i].badUe = true;
+                    if (i < badNum * (highMobilityNum / 100)) {
+                        ue[i].mobility = 1;
+                    }
+                    if (i > badNum && i < ueNum * (highMobilityNum / 100)) {
+                        ue[i].mobility = 1;
+                    }
                     //System.out.printf("Ue:%d,X:%3d,Y:%3d,CQI:%2d\n", i, ue[i].x, ue[i].y, ue[i].cqi);
                 }
 
@@ -111,10 +119,10 @@ public class Main {
 
                 int rnd = 200;
                 int[] resultTotal = new int[3];
-                resultTotal[0]=resultTotal[1]=resultTotal[2]=0;
+                resultTotal[0] = resultTotal[1] = resultTotal[2] = 0;
 
                 while (rnd > 0) {
-                    System.out.println("TK:"+tokenNum+" Rnd:"+rnd);
+                    System.out.println("TK:" + tokenNum + " Rnd:" + rnd);
                     for (int i = 0; i < ueNum; i++) {
                         ue[i].move(ue, i);
                         //System.out.println("Ue Moving: "+i);
@@ -127,9 +135,9 @@ public class Main {
                     }
                     int[] result;
                     result = sendPacket(ran, ue);
-                    resultTotal[0]+=result[0];
-                    resultTotal[1]+=result[1];
-                    resultTotal[2]+=result[2];
+                    resultTotal[0] += result[0];
+                    resultTotal[1] += result[1];
+                    resultTotal[2] += result[2];
 
                     //draw network
                     /*try {
@@ -139,35 +147,33 @@ public class Main {
                         Thread.currentThread().interrupt();
                     }
                     drawing.draw();*/
-                    if(tokenNum<=5){
-                        int badue=0,poorue=0,tokenDec=0;
+                    if (tokenNum <= 5) {
+                        int badue = 0, poorue = 0, tokenDec = 0;
                         ArrayList<Integer> poor = new ArrayList<>();
-                        int tmpTotal=getTotalTk(ue,ueNum);
-                        for(int i=0;i<ueNum;i++){
-                            if(classify(ue,ueNum,ue[i])==1){
-                                int tmp=ue[i].token;
+                        int tmpTotal = getTotalTk(ue, ueNum);
+                        for (int i = 0; i < ueNum; i++) {
+                            if (classify(ue, ueNum, ue[i]) == 1) {
+                                int tmp = ue[i].token;
                                 ue[i].decline();
-                                tokenDec+=tmp-ue[i].token+1;
+                                tokenDec += tmp - ue[i].token + 1;
                                 badue++;
-                            }
-                            else if(classify(ue,ueNum,ue[i])==-1){
+                            } else if (classify(ue, ueNum, ue[i]) == -1) {
                                 poorue++;
                                 poor.add(i);
                             }
                         }
-                        int tokenToGive = tmpTotal-getTotalTk(ue,ueNum);
-                        for(int i=0;i<poorue;i++){
-                            if(tokenToGive<=0)
+                        int tokenToGive = tmpTotal - getTotalTk(ue, ueNum);
+                        for (int i = 0; i < poorue; i++) {
+                            if (tokenToGive <= 0)
                                 break;
-                            ue[poor.get(i)].giveTk(tmpTotal-getTotalTk(ue,ueNum),poorue);
-                            if((tmpTotal-getTotalTk(ue,ueNum))/poorue < 1)
+                            ue[poor.get(i)].giveTk(tmpTotal - getTotalTk(ue, ueNum), poorue);
+                            if ((tmpTotal - getTotalTk(ue, ueNum)) / poorue < 1)
                                 tokenToGive--;
                             else
-                                tokenToGive=tokenToGive-((tmpTotal-getTotalTk(ue,ueNum))/poorue);
+                                tokenToGive = tokenToGive - ((tmpTotal - getTotalTk(ue, ueNum)) / poorue);
                         }
-                    }
-                    else{
-                        for(int i=0;i<ueNum;i++){
+                    } else {
+                        for (int i = 0; i < ueNum; i++) {
                             ue[i].decline();
                             ue[i].giveTk(tokenNum);
                         }
@@ -184,10 +190,12 @@ public class Main {
             }*/
                 //System.out.printf("D2D:%9d B2D:%9d DRP:%9d\n", resultTotal[0],resultTotal[1],resultTotal[2]);
                 //String fileName =  "result.csv";
-                try(FileWriter fileWriter = new FileWriter(fileName,true)){
-                    String fileContent = resultTotal[0]+","+resultTotal[1]+","+resultTotal[2]+"\n";
+                try (FileWriter fileWriter = new FileWriter(fileName, true)) {
+                    String fileContent = resultTotal[0] + "," + resultTotal[1] + "," + resultTotal[2] + "\n";
                     fileWriter.write(fileContent);
-                }catch (IOException e){}
+                } catch (IOException e) {
+                }
+            }
             }
 
         }

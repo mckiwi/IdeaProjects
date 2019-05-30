@@ -5,6 +5,7 @@ import java.util.Random;
 public class Ue {
 
     int token;
+    int mobility=0; //1:high
     int cqi; // range/2 -> 0-10
     Random ran;
     int x,y,range;
@@ -50,6 +51,21 @@ public class Ue {
         neighbor.clear();
         while(true){
             int far = 20;
+            int direction = ran.nextInt(4);
+            x+=dir[direction][0]*far;
+            y+=dir[direction][1]*far;
+            if(x>=0 && x<=range && y>0 && y<=range)
+                break;
+            x-=dir[direction][0]*far;
+            y-=dir[direction][1]*far;
+        }
+        changeCQI();
+        table(other,thisUeNum);
+    }
+    void moveHigh(Ue[] other, int thisUeNum){
+        neighbor.clear();
+        while(true){
+            int far = 20*25;
             int direction = ran.nextInt(4);
             x+=dir[direction][0]*far;
             y+=dir[direction][1]*far;
