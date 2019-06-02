@@ -3,18 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d8c19fd6-8399-45d4-9ae5-6085526745f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../active/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../active/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../active/result.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../optimal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../optimal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../optimal/out/production/optimal/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../optimal/out/production/optimal/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../optimal/out/production/optimal/Ue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../optimal/out/production/optimal/Ue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../optimal/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../optimal/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../optimal/src/Ue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../optimal/src/Ue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../optimal/result.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../passive/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../passive/out/production/passive/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/out/production/passive/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../passive/out/production/passive/Ue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/out/production/passive/Ue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../passive/result.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/result.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../passive/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../passive/src/Ue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/src/Ue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../passive/result.csv" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,7 +21,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.57237935">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
@@ -50,8 +44,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Ue.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="81" column="26" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
+                <state relative-caret-position="242">
+                  <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -185,12 +179,12 @@
       <workItem from="1556639966075" duration="10000" />
       <workItem from="1556641104424" duration="1234000" />
       <workItem from="1556719381483" duration="5443000" />
-      <workItem from="1559239353177" duration="2483000" />
+      <workItem from="1559239353177" duration="3507000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70514000" />
+    <option name="totallyTimeSpent" value="71538000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -202,10 +196,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="2912" y="24" width="928" height="1056" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20287451" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3185941" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -214,7 +208,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30682978" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3158447" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39959225" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -259,16 +253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="81" column="26" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -276,6 +260,16 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#relay#0;class#Main#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

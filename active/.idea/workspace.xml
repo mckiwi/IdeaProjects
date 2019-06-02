@@ -3,20 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="4ba05630-3644-4d2d-aa2a-a54f078ef8f1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../mcProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mcProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mcProject/result.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../optimal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../optimal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../optimal/out/production/optimal/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../optimal/out/production/optimal/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../optimal/out/production/optimal/Ue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../optimal/out/production/optimal/Ue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../optimal/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../optimal/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../optimal/src/Ue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../optimal/src/Ue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../optimal/result.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../passive/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../passive/out/production/passive/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/out/production/passive/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../passive/out/production/passive/Ue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/out/production/passive/Ue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../passive/result.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/result.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../passive/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../passive/src/Ue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../passive/src/Ue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../passive/result.csv" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,14 +22,14 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.52747256">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="824">
-                  <caret line="186" column="45" selection-start-line="186" selection-start-column="45" selection-end-line="186" selection-end-column="45" />
+                <state relative-caret-position="375">
+                  <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#relay#0;class#Main#0" />
@@ -85,7 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="65" />
     <option name="y" value="24" />
     <option name="width" value="928" />
@@ -121,7 +114,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../readResult" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -166,18 +159,19 @@
       <workItem from="1556894935122" duration="7600000" />
       <workItem from="1557245206328" duration="1989000" />
       <workItem from="1557930891295" duration="7825000" />
-      <workItem from="1559241706743" duration="280000" />
+      <workItem from="1559241706743" duration="1140000" />
+      <workItem from="1559495156020" duration="60000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18976000" />
+    <option name="totallyTimeSpent" value="19896000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16583748" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17634052" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -186,7 +180,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37410805" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38509968" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -222,24 +216,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#relay#0;class#Main#0" />
+            <element signature="method#sendPacket#0;class#Main#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
-          <caret line="186" column="45" selection-start-line="186" selection-start-column="45" selection-end-line="186" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#relay#0;class#Main#0" />
-            <element signature="method#sendPacket#0;class#Main#0" />
           </folding>
         </state>
       </provider>
