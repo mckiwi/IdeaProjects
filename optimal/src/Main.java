@@ -59,8 +59,8 @@ public class Main {
         return totalTk;
     }
 
-    static int classify(Ue[] ue,int ueNum,Ue ueTarget){
-        double thresholdHigh=0.001;//0.001
+    static int classify(Ue[] ue,int ueNum,Ue ueTarget,double thresholdHigh){
+        //double thresholdHigh=0.001;//0.001
         int thresholdLow=1;
         if( (double)ueTarget.token/getTotalTk(ue,ueNum) >= thresholdHigh){
             return 1; //is bad UE
@@ -75,36 +75,37 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
+        for(double thresholdHigh=0.0004;thresholdHigh<=0.0016;thresholdHigh+=0.0002){
         for(int tokenNum=1;tokenNum<=30;tokenNum++){
-            for(int badNum = 100;badNum<=2000;badNum+=100) {
-                for(int highMobilityNum=10;highMobilityNum<=90;highMobilityNum+=20) {
-                String fileName = "result.csv";
-                try (FileWriter fileWriter = new FileWriter(fileName, true)) {
-                    String fileContent = "Token:" + tokenNum + "," + "Bad UE:" + badNum + "\n";
-                    fileWriter.write(fileContent);
-                } catch (IOException e) {
-                }
+            for(int badNum = 300;badNum<=300;badNum+=100) {
+                for(int highMobilityNum=10;highMobilityNum<=10;highMobilityNum+=20) {
 
-                int ueNum = 3000, range = 2000;
-
-
-                Random ran = new Random();
-                Ue[] ue = new Ue[ueNum];
-                for (int i = 0; i < ueNum; i++) {   //initial
-                    ue[i] = new Ue(tokenNum, range);
-                    if (i < badNum)
-                        ue[i].badUe = true;
-                    if (i < badNum * (highMobilityNum / 100)) {
-                        ue[i].mobility = 1;
+                    String fileName = "result.csv";
+                    try (FileWriter fileWriter = new FileWriter(fileName, true)) {
+                        String fileContent = "Token:" + tokenNum + "," + "Bad UE:" + badNum + "\n";
+                        fileWriter.write(fileContent);
+                    } catch (IOException e) {
                     }
-                    if (i > badNum && i < ueNum * (highMobilityNum / 100)) {
-                        ue[i].mobility = 1;
-                    }
-                    //System.out.printf("Ue:%d,X:%3d,Y:%3d,CQI:%2d\n", i, ue[i].x, ue[i].y, ue[i].cqi);
-                }
 
-                //see neighbor
+                    int ueNum = 3000, range = 2000;
+
+
+                    Random ran = new Random();
+                    Ue[] ue = new Ue[ueNum];
+                    for (int i = 0; i < ueNum; i++) {   //initial
+                        ue[i] = new Ue(tokenNum, range);
+                        if (i < badNum)
+                            ue[i].badUe = true;
+                        if (i < badNum * (highMobilityNum / 100)) {
+                            ue[i].mobility = 1;
+                        }
+                        if (i > badNum && i < ueNum * (highMobilityNum / 100)) {
+                            ue[i].mobility = 1;
+                        }
+                        //System.out.printf("Ue:%d,X:%3d,Y:%3d,CQI:%2d\n", i, ue[i].x, ue[i].y, ue[i].cqi);
+                    }
+
+                    //see neighbor
         /*for(int i = 0; i< ueNum;i++){
             ue[i].table(ue, i);
             System.out.print("Ue"+i+":");
@@ -114,32 +115,32 @@ public class Main {
             }System.out.println();
         }*/
 
-                //myDraw drawing = new myDraw(ue, range);
+                    //myDraw drawing = new myDraw(ue, range);
 
 
-                int rnd = 200;
-                int[] resultTotal = new int[3];
-                resultTotal[0] = resultTotal[1] = resultTotal[2] = 0;
+                    int rnd = 200;
+                    int[] resultTotal = new int[3];
+                    resultTotal[0] = resultTotal[1] = resultTotal[2] = 0;
 
-                while (rnd > 0) {
-                    System.out.println("TK:" + tokenNum + " Rnd:" + rnd);
-                    for (int i = 0; i < ueNum; i++) {
-                        ue[i].move(ue, i);
-                        //System.out.println("Ue Moving: "+i);
+                    while (rnd > 0) {
+                        System.out.println("TK:" + tokenNum + " Rnd:" + rnd);
+                        for (int i = 0; i < ueNum; i++) {
+                            ue[i].move(ue, i);
+                            //System.out.println("Ue Moving: "+i);
                 /*try{
                     Thread.sleep(10);
                 }
                 catch (InterruptedException ex){
                     Thread.currentThread().interrupt();
                 }*/
-                    }
-                    int[] result;
-                    result = sendPacket(ran, ue);
-                    resultTotal[0] += result[0];
-                    resultTotal[1] += result[1];
-                    resultTotal[2] += result[2];
+                        }
+                        int[] result;
+                        result = sendPacket(ran, ue);
+                        resultTotal[0] += result[0];
+                        resultTotal[1] += result[1];
+                        resultTotal[2] += result[2];
 
-                    //draw network
+                        //draw network
                     /*try {
                         Thread.sleep(5);
                     }
@@ -147,53 +148,54 @@ public class Main {
                         Thread.currentThread().interrupt();
                     }
                     drawing.draw();*/
-                    if (tokenNum <= 5) {
-                        int badue = 0, poorue = 0, tokenDec = 0;
-                        ArrayList<Integer> poor = new ArrayList<>();
-                        int tmpTotal = getTotalTk(ue, ueNum);
-                        for (int i = 0; i < ueNum; i++) {
-                            if (classify(ue, ueNum, ue[i]) == 1) {
-                                int tmp = ue[i].token;
+                        if (tokenNum <= 5) {
+                            int badue = 0, poorue = 0, tokenDec = 0;
+                            ArrayList<Integer> poor = new ArrayList<>();
+                            int tmpTotal = getTotalTk(ue, ueNum);
+                            for (int i = 0; i < ueNum; i++) {
+                                if (classify(ue, ueNum, ue[i],thresholdHigh) == 1) {
+                                    int tmp = ue[i].token;
+                                    ue[i].decline();
+                                    tokenDec += tmp - ue[i].token + 1;
+                                    badue++;
+                                } else if (classify(ue, ueNum, ue[i],thresholdHigh) == -1) {
+                                    poorue++;
+                                    poor.add(i);
+                                }
+                            }
+                            int tokenToGive = tmpTotal - getTotalTk(ue, ueNum);
+                            for (int i = 0; i < poorue; i++) {
+                                if (tokenToGive <= 0)
+                                    break;
+                                ue[poor.get(i)].giveTk(tmpTotal - getTotalTk(ue, ueNum), poorue);
+                                if ((tmpTotal - getTotalTk(ue, ueNum)) / poorue < 1)
+                                    tokenToGive--;
+                                else
+                                    tokenToGive = tokenToGive - ((tmpTotal - getTotalTk(ue, ueNum)) / poorue);
+                            }
+                        } else {
+                            for (int i = 0; i < ueNum; i++) {
                                 ue[i].decline();
-                                tokenDec += tmp - ue[i].token + 1;
-                                badue++;
-                            } else if (classify(ue, ueNum, ue[i]) == -1) {
-                                poorue++;
-                                poor.add(i);
+                                ue[i].giveTk(tokenNum);
                             }
                         }
-                        int tokenToGive = tmpTotal - getTotalTk(ue, ueNum);
-                        for (int i = 0; i < poorue; i++) {
-                            if (tokenToGive <= 0)
-                                break;
-                            ue[poor.get(i)].giveTk(tmpTotal - getTotalTk(ue, ueNum), poorue);
-                            if ((tmpTotal - getTotalTk(ue, ueNum)) / poorue < 1)
-                                tokenToGive--;
-                            else
-                                tokenToGive = tokenToGive - ((tmpTotal - getTotalTk(ue, ueNum)) / poorue);
-                        }
-                    } else {
-                        for (int i = 0; i < ueNum; i++) {
-                            ue[i].decline();
-                            ue[i].giveTk(tokenNum);
-                        }
+
+                        //System.out.println(getTotalTk(ue,ueNum));
+
+                        rnd--;
                     }
 
-                    //System.out.println(getTotalTk(ue,ueNum));
-
-                    rnd--;
-                }
-
-                //drawing.close();
+                    //drawing.close();
             /*for(int co1=0;co1<ueNum;co1++){
                 System.out.printf("Ue%2d: %3d\n",co1,ue[co1].token);
             }*/
-                //System.out.printf("D2D:%9d B2D:%9d DRP:%9d\n", resultTotal[0],resultTotal[1],resultTotal[2]);
-                //String fileName =  "result.csv";
-                try (FileWriter fileWriter = new FileWriter(fileName, true)) {
-                    String fileContent = resultTotal[0] + "," + resultTotal[1] + "," + resultTotal[2] + "\n";
-                    fileWriter.write(fileContent);
-                } catch (IOException e) {
+                    //System.out.printf("D2D:%9d B2D:%9d DRP:%9d\n", resultTotal[0],resultTotal[1],resultTotal[2]);
+                    //String fileName =  "result.csv";
+                    try (FileWriter fileWriter = new FileWriter(fileName, true)) {
+                        String fileContent = resultTotal[0] + "," + resultTotal[1] + "," + resultTotal[2] + "\n";
+                        fileWriter.write(fileContent);
+                    } catch (IOException e) {
+                    }
                 }
             }
             }
