@@ -107,10 +107,10 @@ public class Ue {
         return;
     }
 
-    void giveTk(int tokenNum){
+    void giveTkPsv(int tokenNum, int thresholdLow){
         double tmp = (double)tokenNum;
         tmp= tmp*(1-declineRate);
-        if(token<2)     //threshold:2
+        if(token<thresholdLow)     //threshold:2
             //token+=2;
             token+=tmp;
         return;

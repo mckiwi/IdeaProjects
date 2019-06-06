@@ -75,7 +75,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        for(double thresholdHigh=0.0004;thresholdHigh<=0.0016;thresholdHigh+=0.0002){
+        for(int thresholdLow=1;thresholdLow<=5;thresholdLow+=1){
         for(int tokenNum=1;tokenNum<=30;tokenNum++){
             for(int badNum = 300;badNum<=300;badNum+=100) {
                 for(int highMobilityNum=10;highMobilityNum<=10;highMobilityNum+=20) {
@@ -152,7 +152,8 @@ public class Main {
                             int badue = 0, poorue = 0, tokenDec = 0;
                             ArrayList<Integer> poor = new ArrayList<>();
                             int tmpTotal = getTotalTk(ue, ueNum);
-                            for (int i = 0; i < ueNum; i++) {
+                            double thresholdHigh = 0.001;
+                            for (int i = 0; i < ueNum; i++) { //classify
                                 if (classify(ue, ueNum, ue[i],thresholdHigh) == 1) {
                                     int tmp = ue[i].token;
                                     ue[i].decline();
@@ -173,10 +174,11 @@ public class Main {
                                 else
                                     tokenToGive = tokenToGive - ((tmpTotal - getTotalTk(ue, ueNum)) / poorue);
                             }
-                        } else {
+                        }
+                        else {
                             for (int i = 0; i < ueNum; i++) {
                                 ue[i].decline();
-                                ue[i].giveTk(tokenNum);
+                                ue[i].giveTkPsv(tokenNum,thresholdLow);
                             }
                         }
 

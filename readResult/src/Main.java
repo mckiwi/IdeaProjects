@@ -1,10 +1,10 @@
-import java.io.*;
+/*mport java.io.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        String fileName = "threshold-analyse.csv";
+        String fileName = "result-opt-mblty.csv";
         String fileOut = "output.csv";
         int take=1;
         for(int i=1;i<=take;i++){
@@ -58,17 +58,17 @@ public class Main {
 
 
     }
-}
+}*/
 
-/*import java.io.*;
+import java.io.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        String fileName = "mob-tk-bue.csv";
+        String fileName = "rawdata_opt.csv";
         String fileOut = "output.csv";
-        int take=30;
+        int take=1;
         for(int i=1;i<=take;i++){
             int lineNum=1,tmp=i;
             try(FileReader fileReader = new FileReader(fileName)){
@@ -92,9 +92,16 @@ public class Main {
                                 col++;
 
                             if(tmp==take)tmp=0;
-                            if(lineNum%take==tmp) {
-                                fileWriter.write(ch);
-                                System.out.print((char) ch);
+                            if(lineNum%take==tmp && col==2) {
+                                if((char)ch == ','){
+                                    System.out.println();
+                                    String newline = "\n";
+                                    fileWriter.write(newline);
+                                }
+                                else {
+                                    fileWriter.write(ch);
+                                    System.out.print((char) ch);
+                                }
                             }
                             //System.out.print((char) ch);
 
@@ -120,4 +127,4 @@ public class Main {
 
 
     }
-}*/
+}
