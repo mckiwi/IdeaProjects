@@ -1,12 +1,12 @@
-/*mport java.io.*;
+/*import java.io.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        String fileName = "result-opt-mblty.csv";
+        String fileName = "packetloss_bue_tk_mob.csv";
         String fileOut = "output.csv";
-        int take=1;
+        int take=5;
         for(int i=1;i<=take;i++){
             int lineNum=1,tmp=i;
             try(FileReader fileReader = new FileReader(fileName)){
@@ -30,7 +30,7 @@ public class Main {
                             col++;
 
                         if(tmp==take)tmp=0;
-                        if(lineNum%2==0) {
+                        if(lineNum%take==tmp) {
                             fileWriter.write(ch);
                             System.out.print((char) ch);
                         }
@@ -66,9 +66,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String fileName = "rawdata_opt.csv";
+        String fileName = "threshold_low.csv";
         String fileOut = "output.csv";
-        int take=1;
+        int take=2;
         for(int i=1;i<=take;i++){
             int lineNum=1,tmp=i;
             try(FileReader fileReader = new FileReader(fileName)){
@@ -92,7 +92,7 @@ public class Main {
                                 col++;
 
                             if(tmp==take)tmp=0;
-                            if(lineNum%take==tmp && col==2) {
+                            if(lineNum%take==tmp && col==0) {   //which param to extract and choose column
                                 if((char)ch == ','){
                                     System.out.println();
                                     String newline = "\n";
