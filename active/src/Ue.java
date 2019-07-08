@@ -100,6 +100,14 @@ public class Ue {
         return;
     }
 
+    void decline(double decRate){
+        if(token>0){
+            token*=decRate;
+        }
+        return;
+    }
+
+
     void giveTk(int tokenDec, int poorue){
         double tmp = (double)tokenDec;
         tmp = tokenDec/poorue;

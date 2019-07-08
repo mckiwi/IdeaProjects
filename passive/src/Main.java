@@ -60,35 +60,37 @@ public class Main {
 
     public static void main(String[] args) {
 
-        for(int tokenNum=1;tokenNum<=30;tokenNum++){
-            for(int badNum = 100;badNum<=2000;badNum+=100) {
-                for(int highMobilityNum=10;highMobilityNum<=90;highMobilityNum+=20) {
-                String fileName = "result.csv";
-                try (FileWriter fileWriter = new FileWriter(fileName, true)) {
-                    String fileContent = "Token:" + tokenNum + "," + "Bad UE:" + badNum + "\n";
-                    fileWriter.write(fileContent);
-                } catch (IOException e) {
-                }
 
-                int ueNum = 3000, range = 2000;
+            for(int badNum = 100;badNum<=1600;badNum+=500) {
+                for(double decRate=0.6;decRate<=0.8;decRate+=0.1) {
+                    for (int highMobilityNum = 10; highMobilityNum <= 10; highMobilityNum += 20) {
+                        for (int tokenNum = 1; tokenNum <= 30; tokenNum++) {
+                            String fileName = "result.csv";
+                            try (FileWriter fileWriter = new FileWriter(fileName, true)) {
+                                String fileContent = "Token:" + tokenNum + "," + "Bad UE:" + badNum + "\n";
+                                fileWriter.write(fileContent);
+                            } catch (IOException e) {
+                            }
+
+                            int ueNum = 3000, range = 2000;
 
 
-                Random ran = new Random();
-                Ue[] ue = new Ue[ueNum];
-                for (int i = 0; i < ueNum; i++) {   //initial
-                    ue[i] = new Ue(tokenNum, range);
-                    if (i < badNum)
-                        ue[i].badUe = true;
-                    if (i < badNum * (highMobilityNum / 100)) {
-                        ue[i].mobility = 1;
-                    }
-                    if (i > badNum && i < ueNum * (highMobilityNum / 100)) {
-                        ue[i].mobility = 1;
-                    }
-                    //System.out.printf("Ue:%d,X:%3d,Y:%3d,CQI:%2d\n", i, ue[i].x, ue[i].y, ue[i].cqi);
-                }
+                            Random ran = new Random();
+                            Ue[] ue = new Ue[ueNum];
+                            for (int i = 0; i < ueNum; i++) {   //initial
+                                ue[i] = new Ue(tokenNum, range);
+                                if (i < badNum)
+                                    ue[i].badUe = true;
+                                if (i < badNum * (highMobilityNum / 100)) {
+                                    ue[i].mobility = 1;
+                                }
+                                if (i > badNum && i < ueNum * (highMobilityNum / 100)) {
+                                    ue[i].mobility = 1;
+                                }
+                                //System.out.printf("Ue:%d,X:%3d,Y:%3d,CQI:%2d\n", i, ue[i].x, ue[i].y, ue[i].cqi);
+                            }
 
-                //see neighbor
+                            //see neighbor
         /*for(int i = 0; i< ueNum;i++){
             ue[i].table(ue, i);
             System.out.print("Ue"+i+":");
@@ -98,32 +100,32 @@ public class Main {
             }System.out.println();
         }*/
 
-                //myDraw drawing = new myDraw(ue, range);
+                            //myDraw drawing = new myDraw(ue, range);
 
 
-                int rnd = 200;
-                int[] resultTotal = new int[3];
-                resultTotal[0] = resultTotal[1] = resultTotal[2] = 0;
+                            int rnd = 200;
+                            int[] resultTotal = new int[3];
+                            resultTotal[0] = resultTotal[1] = resultTotal[2] = 0;
 
-                while (rnd > 0) {
-                    System.out.println("TK:" + tokenNum + " Rnd:" + rnd);
-                    for (int i = 0; i < ueNum; i++) {
-                        ue[i].move(ue, i);
-                        //System.out.println("Ue Moving: "+i);
+                            while (rnd > 0) {
+                                System.out.println("TK:" + tokenNum + " Rnd:" + rnd);
+                                for (int i = 0; i < ueNum; i++) {
+                                    ue[i].move(ue, i);
+                                    //System.out.println("Ue Moving: "+i);
                 /*try{
                     Thread.sleep(10);
                 }
                 catch (InterruptedException ex){
                     Thread.currentThread().interrupt();
                 }*/
-                    }
-                    int[] result;
-                    result = sendPacket(ran, ue);
-                    resultTotal[0] += result[0];
-                    resultTotal[1] += result[1];
-                    resultTotal[2] += result[2];
+                                }
+                                int[] result;
+                                result = sendPacket(ran, ue);
+                                resultTotal[0] += result[0];
+                                resultTotal[1] += result[1];
+                                resultTotal[2] += result[2];
 
-                    //draw network
+                                //draw network
                     /*try {
                         Thread.sleep(5);
                     }
@@ -132,28 +134,29 @@ public class Main {
                     }
                     drawing.draw();*/
 
-                    for (int i = 0; i < ueNum; i++) {
-                        ue[i].decline();
-                        ue[i].giveTk(tokenNum);
-                    }
-                    //System.out.println(getTotalTk(ue,ueNum));
+                                for (int i = 0; i < ueNum; i++) {
+                                    ue[i].decline(decRate);
+                                    ue[i].giveTk(tokenNum);
+                                }
+                                //System.out.println(getTotalTk(ue,ueNum));
 
-                    rnd--;
-                }
+                                rnd--;
+                            }
 
-                //drawing.close();
+                            //drawing.close();
             /*for(int co1=0;co1<ueNum;co1++){
                 System.out.printf("Ue%2d: %3d\n",co1,ue[co1].token);
             }*/
-                //System.out.printf("D2D:%9d B2D:%9d DRP:%9d\n", resultTotal[0],resultTotal[1],resultTotal[2]);
-                //String fileName =  "result.csv";
-                try (FileWriter fileWriter = new FileWriter(fileName, true)) {
-                    String fileContent = resultTotal[0] + "," + resultTotal[1] + "," + resultTotal[2] + "\n";
-                    fileWriter.write(fileContent);
-                } catch (IOException e) {
+                            //System.out.printf("D2D:%9d B2D:%9d DRP:%9d\n", resultTotal[0],resultTotal[1],resultTotal[2]);
+                            //String fileName =  "result.csv";
+                            try (FileWriter fileWriter = new FileWriter(fileName, true)) {
+                                String fileContent = resultTotal[0] + "," + resultTotal[1] + "," + resultTotal[2] + "\n";
+                                fileWriter.write(fileContent);
+                            } catch (IOException e) {
+                            }
+                        }
+                    }
                 }
-            }
-            }
 
         }
         return;

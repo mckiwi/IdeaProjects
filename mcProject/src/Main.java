@@ -92,7 +92,7 @@ public class Main {
             }System.out.println();
         }*/
 
-                    //myDraw drawing = new myDraw(ue, range);
+                    myDraw drawing = new myDraw(ue, range);
 
 
                     int rnd = 200;
@@ -121,13 +121,13 @@ public class Main {
                         resultTotal[2] += result[2];
 
                         //draw network
-                    /*try {
+                    try {
                         Thread.sleep(5);
                     }
                     catch(InterruptedException ex){
                         Thread.currentThread().interrupt();
                     }
-                    drawing.draw();*/
+                    drawing.draw();
 
                         rnd--;
                     }

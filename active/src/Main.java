@@ -58,9 +58,9 @@ public class Main {
         }
         return totalTk;
     }
-    static int classify(Ue[] ue,int ueNum,Ue ueTarget){
-        double thresholdHigh=0.001;//0.001
-        int thresholdLow=1;
+    static int classify(Ue[] ue,int ueNum,Ue ueTarget,double thresholdHigh, int thresholdLow){
+        //double thresholdHigh=0.001;//0.001
+        //int thresholdLow=1;
         if( (double)ueTarget.token/getTotalTk(ue,ueNum) >= thresholdHigh){
             return 1; //is bad UE
         }
@@ -75,10 +75,13 @@ public class Main {
 
 
     public static void main(String[] args) {
-
-        for(int tokenNum=1;tokenNum<=30;tokenNum++){
-            for(int badNum = 100;badNum<=2000;badNum+=100){
-                for(int highMobilityNum=10;highMobilityNum<=90;highMobilityNum+=20) {
+        for (int badNum = 100; badNum <= 2000; badNum += 100) {
+            for (int highMobilityNum = 10; highMobilityNum <= 90; highMobilityNum += 20) {
+        for(double decRate=0.7;decRate<=0.7;decRate+=0.1){
+            int thresholdLow = 2;
+            double thresholdHigh = 0.001;
+        for (int tokenNum = 1; tokenNum <= 30; tokenNum++) {
+                    int pue =0;
                     String fileName = "result.csv";
                     try (FileWriter fileWriter = new FileWriter(fileName, true)) {
                         String fileContent = "Token:" + tokenNum + "," + "Bad UE:" + badNum + "\n";
@@ -151,16 +154,17 @@ public class Main {
                         ArrayList<Integer> poor = new ArrayList<>();
                         int tmpTotal = getTotalTk(ue, ueNum);
                         for (int i = 0; i < ueNum; i++) {
-                            if (classify(ue, ueNum, ue[i]) == 1) {
+                            if (classify(ue, ueNum, ue[i],thresholdHigh,thresholdLow) == 1) {
                                 int tmp = ue[i].token;
-                                ue[i].decline();
+                                ue[i].decline(decRate);
                                 tokenDec += tmp - ue[i].token + 1;
                                 badue++;
-                            } else if (classify(ue, ueNum, ue[i]) == -1) {
+                            } else if (classify(ue, ueNum, ue[i],thresholdHigh, thresholdLow) == -1) {
                                 poorue++;
                                 poor.add(i);
                             }
                         }
+                        pue = poorue;
                         int tokenToGive = tmpTotal - getTotalTk(ue, ueNum);
                         for (int i = 0; i < poorue; i++) {
                             if (tokenToGive <= 0)
@@ -182,13 +186,16 @@ public class Main {
                     //System.out.printf("D2D:%9d B2D:%9d DRP:%9d\n", resultTotal[0],resultTotal[1],resultTotal[2]);
                     //String fileName =  "result.csv";
                     try (FileWriter fileWriter = new FileWriter(fileName, true)) {
-                        String fileContent = resultTotal[0] + "," + resultTotal[1] + "," + resultTotal[2] + "\n";
+                        //String fileContent = resultTotal[0] + "," + resultTotal[1] + "," + resultTotal[2] + "\n";
+                        String fileContent = pue + "\n";
                         fileWriter.write(fileContent);
-                    } catch (IOException e) {}
+                    } catch (IOException e) {
+                    }
                 }
             }
 
         }
+    }
         return;
     }
 }

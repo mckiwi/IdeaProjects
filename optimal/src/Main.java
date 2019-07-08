@@ -59,9 +59,9 @@ public class Main {
         return totalTk;
     }
 
-    static int classify(Ue[] ue,int ueNum,Ue ueTarget,double thresholdHigh){
+    static int classify(Ue[] ue,int ueNum,Ue ueTarget,double thresholdHigh,int thresholdLow){
         //double thresholdHigh=0.001;//0.001
-        int thresholdLow=1;
+        //int thresholdLow=1;
         if( (double)ueTarget.token/getTotalTk(ue,ueNum) >= thresholdHigh){
             return 1; //is bad UE
         }
@@ -75,10 +75,13 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        for(int thresholdLow=1;thresholdLow<=5;thresholdLow+=1){
+        for(int badNum = 100;badNum<=1600;badNum+=500) {
+            for(int highMobilityNum=10;highMobilityNum<=10;highMobilityNum+=60) {
+        for(double decRate=0.6;decRate<=0.8;decRate+=0.1){
+            int thresholdLow = 2;
+            double thresholdHigh = 0.001;
         for(int tokenNum=1;tokenNum<=30;tokenNum++){
-            for(int badNum = 300;badNum<=300;badNum+=100) {
-                for(int highMobilityNum=10;highMobilityNum<=10;highMobilityNum+=20) {
+
 
                     String fileName = "result.csv";
                     try (FileWriter fileWriter = new FileWriter(fileName, true)) {
@@ -152,14 +155,14 @@ public class Main {
                             int badue = 0, poorue = 0, tokenDec = 0;
                             ArrayList<Integer> poor = new ArrayList<>();
                             int tmpTotal = getTotalTk(ue, ueNum);
-                            double thresholdHigh = 0.001;
+                           // double thresholdHigh = 0.001;
                             for (int i = 0; i < ueNum; i++) { //classify
-                                if (classify(ue, ueNum, ue[i],thresholdHigh) == 1) {
+                                if (classify(ue, ueNum, ue[i],thresholdHigh,thresholdLow) == 1) {
                                     int tmp = ue[i].token;
-                                    ue[i].decline();
+                                    ue[i].decline(decRate);//TODO decline:0.6-0.8
                                     tokenDec += tmp - ue[i].token + 1;
                                     badue++;
-                                } else if (classify(ue, ueNum, ue[i],thresholdHigh) == -1) {
+                                } else if (classify(ue, ueNum, ue[i],thresholdHigh,thresholdLow) == -1) {
                                     poorue++;
                                     poor.add(i);
                                 }

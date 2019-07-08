@@ -99,6 +99,14 @@ public class Ue {
         }
         return;
     }
+
+    void decline(double decRate){
+        if(token>0){
+            token*=decRate;
+        }
+        return;
+    }
+
     void giveTk(int tokenNum){
         double tmp = (double)tokenNum;
         tmp= tmp*(1-declineRate);
